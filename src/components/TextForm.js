@@ -4,19 +4,21 @@ export default function TextForm(props) {
     const handleUpClick = () => {
         let newText = text.toUpperCase();
         setText(newText)
+        props.showAlert('converted to uppercase', 'success')
     }
 
     const handleLoClick = () => {
         let newText = text.toLowerCase();
         setText(newText)
+        props.showAlert('converted to lowercase', 'success')
     }
 
     const handleClearClick = () => {
         let newText = '';
         setText(newText)
+        props.showAlert('Text Cleared', 'success')
     }
     const handleOnChange = (event) => {
-        // console.log('on change')
         setText(event.target.value)
     }
 
@@ -24,11 +26,13 @@ export default function TextForm(props) {
         const text = document.querySelector('#textarea')
         text.select()
         navigator.clipboard.writeText(text.value)
+        props.showAlert('Copied to clipboard!', 'success')
     }
 
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/)
         setText(newText.join(' '))
+        props.showAlert('whitespaces removed!', 'success')
     }
 
     const handleReadText = () => {
@@ -36,6 +40,7 @@ export default function TextForm(props) {
         speech.text = text
 
         window.speechSynthesis.speak(speech)
+        props.showAlert('Reading Texts', 'success')
     }
 
     const handleTalktoType = () => {
@@ -53,6 +58,7 @@ export default function TextForm(props) {
         
         }
         recognition.start()        
+        props.showAlert('say to write text', 'success')
     }
     const [text, setText] = useState('');
     // text = 'new text'; // wrong way to change the state
