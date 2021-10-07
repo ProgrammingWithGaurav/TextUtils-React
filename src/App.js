@@ -2,7 +2,14 @@ import './App.css';
 import React, { useState } from 'react'
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import About from './components/About';
 import Alert from './components/Alert';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom'
 
 
 function App() {
@@ -17,11 +24,11 @@ function App() {
     })
     setTimeout(() => {
       setAlert(null)
-    },1500);
+    }, 1500);
   }
 
   const toggleMode = () => {
-    if(mode === 'light'){
+    if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = '#042743'
       setText('Light Mode')
@@ -38,11 +45,20 @@ function App() {
   }
   return (
     <>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} text={text}/>
-      <Alert alert={alert}/>
+      <Router>
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} text={text} />
+      <Alert alert={alert} />
       <div className="container my-3">
-        <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>
+        <Switch>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/">
+            <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
+          </Route>
+        </Switch>
       </div>
+      </Router>
     </>
   );
 }
