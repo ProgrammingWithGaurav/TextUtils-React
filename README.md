@@ -1,6 +1,6 @@
 # MyTextUtils - React
 ### live site:
-- https://best-textutils.netlify.app
+- https://awesome-textutils.netlify.app
 ### Screenshoot
 [![image](https://www.linkpicture.com/q/textutils.png)](https://www.linkpicture.com/view.php?img=LPic615f1329e1710505493337)
 # Getting Started with Create React App
