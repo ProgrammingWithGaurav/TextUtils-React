@@ -12,8 +12,8 @@ import {
 
 
 function App() {
-  const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not
-  const [text, setText] = useState('Dark Mode'); // Whether dark mode is enabled or not
+  const [mode, setMode] = useState('light');
+  const [text, setText] = useState('Dark Mode'); 
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
@@ -32,14 +32,12 @@ function App() {
       document.body.style.backgroundColor = '#042743'
       setText('Light Mode')
       showAlert('Dark mode has been enabled', 'success')
-      // document.title = 'TextUtils - Dark Mode'
     }
     else {
       setMode('light')
       document.body.style.backgroundColor = 'white'
       setText('Dark Mode')
       showAlert('Light mode has been enabled', 'success')
-      // document.title = 'TextUtils - Light Mode'
     }
   }
   return (
