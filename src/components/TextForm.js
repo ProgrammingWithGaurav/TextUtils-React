@@ -62,8 +62,6 @@ export default function TextForm(props) {
         props.showAlert('say to write text', 'success')
     }
     const [text, setText] = useState('');
-    // text = 'new text'; // wrong way to change the state
-    // setText('new Text');  // correct way to change the state
     return (
         <>
             <div className="container" style={{color: props.mode === 'dark' ? 'white':'black'}}>
