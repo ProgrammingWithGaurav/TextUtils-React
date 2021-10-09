@@ -72,7 +72,7 @@ export default function TextForm(props) {
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>Remove Extra WhiteSpcaes</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleReadText}>Read Text</button>
-                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleTalktoType}>Talk to Type</button>
+                <button className="btn btn-primary mx-2 my-1" onClick={handleTalktoType}>Talk to Type</button>
             </div>
             <div className="container my-3" style={{color: props.mode === 'dark' ? 'white':'black'}}>
                 <h2>Your text summary</h2>
