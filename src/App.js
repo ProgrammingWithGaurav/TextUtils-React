@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
 import Alert from './components/Alert';
+import Commands from './components/Commands';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,8 +13,8 @@ import {
 
 
 function App() {
-  const [mode, setMode] = useState('light');
-  const [text, setText] = useState('Dark Mode'); 
+  const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not
+  const [text, setText] = useState('Dark Mode'); // Whether dark mode is enabled or not
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
@@ -26,8 +27,17 @@ function App() {
     }, 1500);
   }
 
-  const toggleMode = () => {
+  const removeBodyClasses =  () => {
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-dark')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-success')
+  }
+  const toggleMode = (cls) => {
+    removeBodyClasses()
     if (mode === 'light') {
+      document.body.classList.add('bg-'+cls)
       setMode('dark')
       document.body.style.backgroundColor = '#042743'
       setText('Light Mode')
@@ -47,11 +57,14 @@ function App() {
       <Alert alert={alert} />
       <div className="container my-3">
         <Switch>
+          <Route exact path="/">
+            <TextForm showAlert={showAlert} heading="Try TextUtils - Word Couner, Character Counte, Remove extra spaces" mode={mode} />
+          </Route>
           <Route exact path="/about">
             <About mode={mode} />
           </Route>
-          <Route exact path="/">
-            <TextForm showAlert={showAlert} heading="Try TextUtils - Word Couner, Character Counte, Remove extra spaces" mode={mode} />
+          <Route exact path="/commands">
+            <Commands mode={mode}/>
           </Route>
         </Switch>
       </div>
