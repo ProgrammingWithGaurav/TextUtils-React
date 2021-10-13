@@ -34,7 +34,7 @@ export default function TextForm(props) {
     }
     const handleSort = () => {
 
-        let newText = text.sort()
+        let newText = text.toString().sort()
 
         setText(newText)
 
