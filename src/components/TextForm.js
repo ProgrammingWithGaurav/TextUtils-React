@@ -87,6 +87,7 @@ export default function TextForm(props) {
             if(transcript.includes('copy')) handleCopy()
             if(transcript.includes('remove whitespace')) handleExtraSpaces()
             if(transcript.includes('read')) handleReadText()
+            if(transcript.includes('sort')) handleSort()
             
             
         
