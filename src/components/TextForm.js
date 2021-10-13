@@ -33,9 +33,10 @@ export default function TextForm(props) {
         props.showAlert('whitespaces removed!', 'success')
     }
     const handleSort = () => {
+        let sort = text.split(" ").sort()
 
-        let newText = text.toString().sort()
-
+        let newText = ""
+        sort.forEach(word => newText += word + " ";
         setText(newText)
 
         props.showAlert('sorted successfully!', 'success')
@@ -105,7 +106,7 @@ export default function TextForm(props) {
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear Text</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>Remove Extra WhiteSpcaes</button>
-                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleSort}>Sort Text</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleSort}>Sort words</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleReadText}>Read Text</button>
                 <button className="btn btn-primary mx-2 my-1" onClick={handleTalktoType}>Talk to Type</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={runCommand}>Say commands</button>
