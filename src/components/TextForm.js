@@ -32,7 +32,15 @@ export default function TextForm(props) {
         setText(newText.join(' '))
         props.showAlert('whitespaces removed!', 'success')
     }
+    const handleSort = () => {
 
+        let newText = text.sort()
+
+        setText(newText)
+
+        props.showAlert('sorted successfully!', 'success')
+
+    }
     const handleReadText = () => {
         const speech = new SpeechSynthesisUtterance()
         speech.text = text
