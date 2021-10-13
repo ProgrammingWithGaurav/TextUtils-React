@@ -36,7 +36,7 @@ export default function TextForm(props) {
         let sort = text.split(" ").sort()
 
         let newText = ""
-        sort.forEach(word => newText += word + " ";
+        sort.forEach(word => newText += word + " ");
         setText(newText)
 
         props.showAlert('sorted successfully!', 'success')
