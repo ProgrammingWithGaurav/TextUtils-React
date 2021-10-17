@@ -112,7 +112,7 @@ export default function TextForm(props) {
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>Remove Extra WhiteSpcaes</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleSort}>Sort words</button>
-                <button diabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleReverse}>Reverse words</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleReverse}>Reverse words</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleReadText}>Read Text</button>
                 <button className="btn btn-primary mx-2 my-1" onClick={handleTalktoType}>Talk to Type</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={runCommand}>Say commands</button>
