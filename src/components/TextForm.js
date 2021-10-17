@@ -34,14 +34,21 @@ export default function TextForm(props) {
     }
     const handleSort = () => {
         let sort = text.split(" ").sort()
-
         let newText = ""
         sort.forEach(word => newText += word + " ");
         setText(newText)
-
         props.showAlert('sorted successfully!', 'success')
-
     }
+    
+
+    const handleReverse = () => {
+        let text = text.split(" ").reverse()
+        let newText = ""
+        sort.forEach(word => newText += word + " ");
+        setText(newText)
+        props.showAlert('words reversed successfully!', 'success')
+    }
+    
     const handleReadText = () => {
         const speech = new SpeechSynthesisUtterance()
         speech.text = text
