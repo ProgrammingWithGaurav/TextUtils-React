@@ -10,6 +10,8 @@ export default function Commands(props) {
             <p className="fs-5 my-3"><b className="fs-4 text-success">copy</b> : say this command to copy the whole text</p>
             <p className="fs-5 my-3"><b className="fs-4 text-success">remove whitespace</b> : say this command to remove extra whitespace</p>
             <p className="fs-5 my-3"><b className="fs-4 text-success">read</b> : say this command when you want computer to read your text</p>
+            <p className="fs-5 my-3"><b className="fs-4 text-success">sort</b> : say this command when you want to sort thr words according to alphabet order</p>
+            <p className="fs-5 my-3"><b className="fs-4 text-success">reverse</b> : say this command when you want to reverse the words</p>
 
         </div>
     )
