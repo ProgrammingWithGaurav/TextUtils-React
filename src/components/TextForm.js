@@ -49,6 +49,15 @@ export default function TextForm(props) {
         props.showAlert('words reversed successfully!', 'success')
     }
     
+    const handleWordReverse = () => {
+        let words = text.split(" ");
+        let newText = ""
+        words.forEach(word => newText += word.reverse() + " ");
+        setText(newText)
+        props.showAlert('words reversed successfully!', 'success')
+
+    }
+    
     const handleReadText = () => {
         const speech = new SpeechSynthesisUtterance()
         speech.text = text
@@ -95,6 +104,7 @@ export default function TextForm(props) {
             if(transcript.includes('remove whitespace')) handleExtraSpaces()
             if(transcript.includes('read')) handleReadText() 
             if(transcript.includes('reverse line')) handleLineReverse() 
+            if(transcript.includes('reverse word')) handleWordReverse() 
       
         
         }
@@ -115,6 +125,7 @@ export default function TextForm(props) {
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>Remove Extra WhiteSpcaes</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleSort}>Sort words</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLineReverse}>Reverse Lines</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleWordReverse}>Reverse words</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleReadText}>Read Text</button>
                 <button className="btn btn-primary mx-2 my-1" onClick={handleTalktoType}>Talk to Type</button>
                 <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={runCommand}>Say commands</button>
