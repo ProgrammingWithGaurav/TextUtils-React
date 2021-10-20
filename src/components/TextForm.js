@@ -46,13 +46,13 @@ export default function TextForm(props) {
         let newText = ""
         words.forEach(word => newText += word + " ");
         setText(newText)
-        props.showAlert('words reversed successfully!', 'success')
+        props.showAlert('line reversed successfully!', 'success')
     }
     
     const handleWordReverse = () => {
         let words = text.split(" ");
         let newText = ""
-        words.forEach(word => newText += word.reverse() + " ");
+        words.forEach(word => newText += word.split("").reverse().join("") + " ");
         setText(newText)
         props.showAlert('words reversed successfully!', 'success')
 
